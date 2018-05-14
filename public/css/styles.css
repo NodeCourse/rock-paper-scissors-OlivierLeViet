@@ -1,0 +1,33 @@
+body {
+    background-color: yellow;
+}
+
+p {
+    text-align: center;
+}
+
+div {
+    margin-left: 34%;
+}
+
+img {
+    margin-right: 30px;
+}
+
+.paper {
+    flex: auto;
+    width: 150px;
+    height: 200px;
+}
+
+.rock {
+    flex: auto;
+    width: 150px;
+    height: 200px;
+}
+
+.scissors {
+    flex: auto;
+    width: 150px;
+    height: 200px;
+}
