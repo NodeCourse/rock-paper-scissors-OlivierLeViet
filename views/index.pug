@@ -4,7 +4,9 @@ html
         link(rel="stylesheet", href="/css/styles.css")
     body
 
-        for choice in choices
+        p Bienvennue sur Atifoumi avec Dwayne Jonhson
 
-            a(href="/play/" + choice.id class="hello") #{choice.name}
-                img(src="/img/" + choice.id + ".png" class="img")
+        for choice in choices
+            div(class="container")
+                a(href="/play/" + choice.id class="hello")
+                    img(src="/img/" + choice.id + ".png" class="img")
