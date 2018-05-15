@@ -1,4 +1,14 @@
 html
     head
         title Olivier Tran
+        link(rel="stylesheet", href="/css/play.css")
+    script(type="text/javascript" src="./server.js")
+    body
+        main
+            center
+                h1(id='result')
+                img(src="img/" + choice + ".png" class="img")
 
+                br
+                p vous avez  gagné
+                a(class="try" href="homepage") Rejouer

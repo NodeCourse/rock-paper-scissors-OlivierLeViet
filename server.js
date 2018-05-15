@@ -3,39 +3,45 @@ const randomItem = require('random-item');
 const bodyParser = require('body-parser');
 const app = express();
 
+const results = ['Égalité !', 'Gagné !', 'Perdu !'];
+const choices = (['paper', 'rock', 'scissors']);
+
 console.log("Server listening : localhost:3000");
 
-// Use Pug to render views
+const result = null;
+
+function userVsComputer(result, userChoice, computerChoice) {
+
+    if (userChoice === computerChoice) {
+        result = results[0];
+    } else if (userChoice === "rock" && computerChoice === "paper") {
+        result = results[2];
+    } else if (userChoice === "paper" && computerChoice === "rock") {
+        result = results[1];
+    } else if (userChoice === "scissors" && computerChoice === "rock") {
+        result = results[2];
+    } else if (userChoice === "rock" && computerChoice === "scissors") {
+        result = results[1];
+    } else if (userChoice === "paper" && computerChoice === "scissors") {
+        result = results[2];
+    } else if (userChoice === "scissors" && computerChoice === "paper") {
+        result = results[1];
+    }
+
+    return result;
+}
+
+
 app.set('view engine', 'pug');
 
-// Serve assets from the public folder
 app.use(express.static('public'));
 
-// Decode form data
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Parse JSON body
-app.use(bodyParser.json());
-
-// Render the home page
 app.get('/', (req, res) => {
-    // Express will look for a page named index.pug
-    // in the "views" folder so you should have a "views/index.pug" file
     res.render('index');
 });
 
 app.get('/:choice', (req, res) => {
-    // req.params.username holds the username so you could
-    // get the corresponding user from the database here
-    const playerChoice = choices.find(choices);
-    const pcChoice = randomItem(choices);
-
-
-    
-
-
-    let winner;
-    res.render("play")
+    res.render("play", {choice: req.params.choice}, {result: req.params.result});
 });
 
 app.listen(3000);
