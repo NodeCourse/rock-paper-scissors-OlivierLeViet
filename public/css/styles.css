@@ -2,30 +2,14 @@ body {
     background-color: yellow;
 }
 
-p {
-    text-align: center;
-    top: 0;
+.hello {
+    display: inline-block;
+    position: center;
 }
 
-img {
+.img {
     margin-right: 30px;
     margin-top: 100px;
-}
-
-.paper {
-    flex: auto;
-    width: 150px;
-    height: 200px;
-}
-
-.rock {
-    flex: auto;
-    width: 150px;
-    height: 200px;
-}
-
-.scissors {
-    flex: auto;
     width: 150px;
     height: 200px;
 }

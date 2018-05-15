@@ -1,14 +1,9 @@
-html
-    head
-        title Olivier Tran
-        link(rel="stylesheet", href="/css/play.css")
-    script(type="text/javascript" src="./server.js")
-    body
-        main
-            center
-                h1(id='result')
-                img(src="img/" + choice + ".png" class="img")
+if winnerName === 'user'
+    h1 You won!
+else if winnerName === 'computer'
+    h1 You lost mate :(
+else
+    h1 Draw!
 
-                br
-                p vous avez  gagné
-                a(class="try" href="homepage") Rejouer
+p User: #{userChoice.name}
+p Computer: #{computerChoice.name}r
